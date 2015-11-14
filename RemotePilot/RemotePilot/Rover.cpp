@@ -13,7 +13,10 @@ Rover::Rover(Positions p, char direction, string command)
 	init();
 }
 
-Rover::~Rover(){}
+Rover::~Rover()
+{
+	delete m_conflicPos;
+}
 
 void Rover::init()
 {

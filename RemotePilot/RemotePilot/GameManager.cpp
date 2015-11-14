@@ -40,6 +40,9 @@ GameManager::~GameManager()
 		delete [] m_mapArea[i];
 	}
 	delete [] m_mapArea;
+
+	m_instance = nullptr;
+	delete m_instance;
 }
 
 void GameManager::setArea(int l, int w)										//init m_mapArea  
