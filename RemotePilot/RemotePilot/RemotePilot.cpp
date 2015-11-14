@@ -20,6 +20,7 @@ int main()
 	printf("\n");
 	gm->commandRoversMove();													//togethor move by command  
 
+	delete gm;
 	getchar();
 	return 0;
 }

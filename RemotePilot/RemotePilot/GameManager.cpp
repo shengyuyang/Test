@@ -21,7 +21,20 @@ GameManager::GameManager()
 
 GameManager::~GameManager()
 {
-	vector<Rover* >(*m_rovers).swap(*m_rovers);
+	//cout<< "       ~GameManager      "<<endl;
+	//cout<<"pro "<<m_rovers->capacity()<<endl;
+
+	vector<Rover* >::iterator it = m_rovers->begin();
+	while(it != m_rovers->end())
+	{
+		delete *it;
+		it++;
+	}
+	m_rovers->clear();
+	delete m_rovers;
+
+	//cout<<"end "<<m_rovers->capacity()<<endl;
+
 	for(int i=0;i<m_width;i++)
 	{
 		delete [] m_mapArea[i];

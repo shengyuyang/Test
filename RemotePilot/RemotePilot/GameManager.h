@@ -24,6 +24,7 @@ class Rover;
 class GameManager
 {
 public:
+	~GameManager();
 	static GameManager* getInstance();
 	void setMapPositionWalkable(Positions p, bool flag);	//make the position walkable    
 	bool checkMapPositionWalkable(Positions p);				//check the position walkable   
@@ -37,7 +38,6 @@ public:
 	int m_length, m_width;									//area range
 private:
 	GameManager();
-	~GameManager();
 	static GameManager* m_instance;
 };
 
